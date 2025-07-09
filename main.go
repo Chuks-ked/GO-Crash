@@ -2,11 +2,12 @@ package main
 
 import "fmt"
 
-func main() {
-    x := 10
-    p := &x // p holds the memory address of x
+func double(n *int) {
+    *n = *n * 2
+}
 
-    fmt.Println("Value of x:", x)
-    fmt.Println("Address of x:", p)
-    fmt.Println("Value at address p points to:", *p)
+func main() {
+    num := 5
+    double(&num)
+    fmt.Println(num) // 10
 }
